@@ -1,0 +1,22 @@
+
+INPUT
+-Contact Informations
+(From DBTC Programs)
+
+----------------------------------------------
+PROCESS
+-Add New Contact Info
+-Delete Existing Contact info
+-Change Contact Info of Existing Contact
+-Retry When Given the Wrong Command
+-Exits When The User Input a Certain Code
+-Display Selected Contact Info
+-Display Changed Contact Info
+-Display Added New Contact Info
+-View the entire directory of the program
+
+-----------------------------------------------
+OUTPUT
+-User’s Demanded Contact Information
+(From DBTC Programs)
+
