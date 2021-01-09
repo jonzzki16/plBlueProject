@@ -10,7 +10,5 @@ It is useful for staffs and personnel of DBTC to use this to help them see easil
 
 This is the Youtube Link of the Video Presentation made by the team for our #plBlueProject
 https://youtu.be/YJukMqeUJW0
-
-
 Watching the link above, is a short summary of our work in order for you to have a small background on checking what is our project all about.
 
