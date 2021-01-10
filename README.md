@@ -9,7 +9,8 @@ We made a Contact Book that can hold, create, edit, delete contact information f
 It is useful for staffs and personnel of DBTC to use this tool to help them see easily the contacts of the persons working or studying in DBTC Mandaluyong.
 
 This is the Youtube Link of the Video Presentation made by the team for our #plBlueProject :
-https://youtu.be/YJukMqeUJW0
+https://youtu.be/YJukMqeUJW0 
+https://youtu.be/TU9D1Q4gk9M
 Watching the link above, is a short summary of our work in order for you to have a small background on checking what is our project all about.
 
 Also this is the link for our DBTC Contact Book Poster :
