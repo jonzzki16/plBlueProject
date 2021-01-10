@@ -1,5 +1,5 @@
 # plBlueProject
-=======
+
 We consists of 3 members, 
 Jonald J. Anda - Team Lead 
 Andrew Nazreth P. CONTI - Project Engineer 
