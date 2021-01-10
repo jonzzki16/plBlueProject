@@ -1,0 +1,29 @@
+
+INPUT
+- Enter "display" - to display contact information.
+- Enter "add" - to add new contact information.
+- Enter "change" - to change the the contact information of an existing one.
+- Enter "delete" - to delete a contact information.
+- Enter "contacts" - to display the content of the contact book.
+- Enter "end" - to exit the program.
+----------------------------------------------
+PROCESS
+-Add New Contact Info
+-Delete Existing Contact info
+-Change Contact Info of Existing Contact
+-Retry When Given the Wrong Command
+-Exits When The User Input a Certain Code
+-Display Selected Contact Info
+-Display Changed Contact Info
+-Display Added New Contact Info
+-View the entire directory of the program
+
+-----------------------------------------------
+OUTPUT
+
+- when users input the command "display" - the program will display a single contact information upon entering a valid contacts in the lists else "not found..." will display.
+- when users input the command "add" - the program will add new contact information.
+- when users input the command "change" - the program will change the existing information of the selected contact in the "contact book" program.
+- when users input the command "delete" - the program will delete a contact and informations of the selected contact in the program.
+- when users input the command "contacts" - the program will display the entire contents of the program "contact book".
+- when users input the command "end" the program will exits.
