@@ -4,7 +4,8 @@ We consists of 3 members,
 Jonald J. Anda - Team Lead 
 Andrew Nazreth P. CONTI - Project Engineer 
 Markus Kyle Malicdem REALIN - Rapporteur
-=======
+
+
 We made a Contact Book that can hold, create, edit, delete contact information from different programs of DBTC Mandaluyong.
 It is useful for staffs and personnel of DBTC to use this tool to help them see easily the contacts of the persons working or studying in DBTC Mandaluyong.
 
@@ -18,10 +19,3 @@ https://imgur.com/d98PmaQ
 
 This is also the link for our User Manual for the DBTC Contact Book :
 https://docs.google.com/document/d/1PO1QYWeTa1_EjDvYCuvgXa6cqtTWNNvQ32f0pQ2NXOc/edit?usp=sharing
-=======
-
-Jonald J. Anda - Team Lead
-Andrew Nazreth P. CONTI - Project Engineer
-Markus Kyle Malicdem REALIN - Rapporteur
-
-Contact Book that holds, creates, edits, deletes contact information from different programs of DBTC
