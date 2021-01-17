@@ -1,21 +1,3 @@
-def header():
-    header_message = ('''~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~~=~=~=~=~=~=~=~=~=~=~=~~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
-    ||   J. Anda- Lead, A.N. Conti- Proj. Engr., M.K. Realin - Rapporteur                BES241    ||
-    ||   Blue Team - Contact Book                                               October 6, 2020    ||
-    ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~~=~=~=~=~=~=~=~=~=~=~=~~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~
-    ||   
-                                                                                              ||''')
-    print("||        {:15}|      {:15}     |      {:15}     |   {:10}  ||".format("NAME", "CONTACT NUMBER",
-                                                                                  "EMAIL ADDRESS", "DEPARTMENT"))
-    print("|| __________________    +    __________________    +    __________________    +    _________  ||")
-
-
-CB_NameList = {"Jonald Anda": "Jonald Anda"}
-CB_Number = {'Jonald Anda': '09365984839'}
-CB_Email = {'Jonald Anda': 'jjanda@one-bosco.org'}
-CB_Department = {'Jonald Anda': 'BED'}
-
-
 def contact_book_menu():
     dashes = "-"
     title = " CONTACT BOOK MENU "
@@ -29,9 +11,9 @@ def contact_book_menu():
     if cb_menu.upper() == "X":
         exit("Thank you, always update your contacts and keep in touch!")
     elif cb_menu.upper() == "A":
-        cb_add()
+        cb_add_modify()
     elif cb_menu.upper() == "V":
-        cb_search()
+        cb_view_menu()
     elif cb_menu.upper() == "M":
         cb_modify()
     elif cb_menu.upper() == "D":
@@ -40,116 +22,117 @@ def contact_book_menu():
         print('''
 Invalid keyword, choose only from menu!
         ''')
+
+    contact_book_menu()
+
+
+def cb_add_modify():
+    f_name = input("First Name: ")
+    l_name = input("Last Name: ")
+    import os
+    if os.path.exists(f_name+" "+l_name+".txt"):
+        print("Contact name exists, do you want to overwrite it?")
+        overwrite = input("Yes [Y] or No [N]")
+        if overwrite.upper() == "Y":
+            mid_name = input("Middle Name: ")
+            m_number = input("Mobile Number: ")
+            department = input("Department: ")
+            email_add = input("Email Address: ")
+            lines = [f_name, mid_name, l_name, department, m_number, email_add]
+            with open(f_name+" "+l_name+'.txt', "w") as file_handler:
+                for line in lines:
+                    file_handler.write(f'{line}\n')
+            file_handler.close()
+            print("Contact data is modified!")
+            contact_book_menu()
+        elif overwrite.upper() == "N":
+            contact_book_menu()
+
+    else:
+        mid_name = input("Middle Name: ")
+        m_number = input("Mobile Number: ")
+        department = input("Department: ")
+        email_add = input("Email Address: ")
+        lines = [f_name, mid_name, l_name, department, m_number, email_add]
+        with open(f_name+" "+l_name+'.txt', "w") as file_handler:
+            for line in lines:
+                file_handler.write(f'{line}\n')
+        file_handler.close()
+        print(f_name+" "+l_name+" is added!")
         contact_book_menu()
 
-
-def cb_add():
-    name = input("Name: ")
-    number = (input("Number: "))
-    email = input("Email: ")
-    department = (input("Department: "))
-    a = {name: name}
-    b = {name: number}
-    c = {name: email}
-    d = {name: department}
-    CB_NameList.update(a)
-    CB_Number.update(b)
-    CB_Email.update(c)
-    CB_Department.update(d)
-    print("""
-Contact added!
-    """)
     contact_book_menu()
 
 
 def cb_search():
-    search_contact = input("Search name: ")
-    if search_contact in CB_NameList:
+    f_name = input("First Name: ")
+    l_name = input("Last Name: ")
+    name_search = open(f_name+" "+l_name+".txt", "r")
+    if name_search.mode == 'r':
+        contents = name_search.readlines()
+        print("{}{}{}{}{}{}".format("NAME: ", (contents[0]), "Middle Name: ", (contents[1]), "Last Name: ", (contents[2])), end="")
+        print("{}{}".format("DEPARTMENT: ", contents[3]), end=" ")
+        print("{}{}".format("CONTACT NUMBER: ", contents[4]), end=" ")
+        print("{}{}".format("EMAIL ADDRESS: ", contents[5]), end=" ")
 
-        print("|| {:25} {:5}     {:13}     {:30}  ||".format("NAME", "DEPARTMENT",
-                                                             "CONTACT NUMBER", "EMAIL ADDRESS"))
-        print("|| __________________        __________     _____________      ______________                  ||")
-        print(f"|| {CB_NameList[search_contact]:25}    {CB_Department[search_contact]:5}       "
-              f"{CB_Number[search_contact]:13}      {CB_Email[search_contact]:30}  ||")
-    else:
-        print("Name not found!")
     contact_book_menu()
 
 
+def cb_directory():
+    import fnmatch
+    import os
+
+    for file in os.listdir('.'):
+        if fnmatch.fnmatch(file, '*.txt'):
+            print(file)
+
+
 def cb_modify():
-    modify_data = input("""
-[N] >> to modify existing contact name
-[D] >> to modify existing Contact Digits
-[E] >> to modify existing Email Address
-[X] >> Back to Main Menu
-
-""")
-    if modify_data.upper() == 'N':
-        old_name = input("Enter name to change: ")
-        if old_name in CB_NameList:
-            new_name = input("Enter New Name: ")
-            CB_NameList[new_name] = CB_NameList.pop(old_name)
-            contact_book_menu()
-        else:
-            print("Name not f44ound!")
-            contact_book_menu()
-
-    elif modify_data.upper() == 'D':
-        old_contact_digits = input("Enter Contact Digits to change: ")
-        if old_contact_digits in CB_Number:
-            new_contact_digits = input("Enter New Name: ")
-            a = {old_contact_digits: new_contact_digits}
-            CB_Number.update(a)
-            for key in a:
-                print(f"{old_contact_digits} is changed to {a[key]}")
-            contact_book_menu()
-        else:
-            print("Contact Digits not found!")
-            contact_book_menu()
-    elif modify_data.upper() == 'E':
-        old_email_address = input("Enter Email Address to change: ")
-        if old_email_address in CB_Email:
-            new_email_address = input("Enter New Email Address: ")
-            a = {old_email_address: new_email_address}
-            CB_Email.update(a)
-            for key in a:
-                print(f"{old_email_address} is changed to {a[key]}")
-            contact_book_menu()
-        else:
-            print("Email Address not found!")
-            contact_book_menu()
-    elif modify_data.upper() == "X":
+    import os
+    f_name = input("First Name: ")
+    l_name = input("Last Name: ")
+    if os.path.exists(f_name+" "+l_name+".txt"):
+        mid_name = input("Middle Name: ")
+        m_number = input("Mobile Number: ")
+        department = input("Department: ")
+        email_add = input("Email Address: ")
+        lines = [f_name, mid_name, l_name, department, m_number, email_add]
+        with open(f_name+" "+l_name+'.txt', "w") as file_handler:
+            for line in lines:
+                file_handler.write(f'{line}\n')
+        file_handler.close()
+        print("Contact data is modified!")
         contact_book_menu()
     else:
-        print("""
-Invalid keyword, Try Again!
-""")
-        cb_modify()
+        print("Contact does not exists!")
+        contact_book_menu()
+
+
+def cb_view_menu():
+    category = input("Search by name, Press [N]. View entire directory, Press [D]")
+    if category.upper() == "N":
+        cb_search()
+    elif category.upper() == "D":
+        cb_directory()
+    else:
+        cb_view_menu()
 
 
 def cb_delete():
-    delete_contact = str(input("Enter name to Delete:"))
-    if delete_contact in CB_NameList:
-        CB_NameList.pop(delete_contact)
-        CB_Department.pop(delete_contact)
-        CB_Number.pop(delete_contact)
-        CB_Email.pop(delete_contact)
-        print(f"{delete_contact} is Deleted")
-        contact_book_menu()
+    import os
+    f_name = input("First Name: ")
+    l_name = input("Last Name: ")
+    if os.path.exists(f_name+" "+l_name+".txt"):
+        os.remove(f_name+" "+l_name+".txt")
     else:
-        print("Name not found!")
+        print("The file does not exist")
+
+    contact_book_menu()
+
+
+while True:
+    try:
         contact_book_menu()
-
-
-def try_again():
-    repeat = input("    Do you want to try again? [y] / [n] >> ")
-    if repeat.upper() == "Y":
+    except FileNotFoundError:
+        print("Name is not in the Directory")
         contact_book_menu()
-    elif repeat.upper() == "N":
-        exit("Always keep in touch!")
-    else:
-        print("Wrong Input, choose YES [y] / NO [n] >> ")
-        try_again()
-
-
-contact_book_menu()
