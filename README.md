@@ -18,5 +18,8 @@ https://youtu.be/TU9D1Q4gk9M
 Also this is the link for our DBTC Contact Book Poster :
 https://imgur.com/d98PmaQ
 
-This is also the link for our User Manual for the DBTC Contact Book :
+This is the link for our User Manual for the DBTC Contact Book :
 https://docs.google.com/document/d/1PO1QYWeTa1_EjDvYCuvgXa6cqtTWNNvQ32f0pQ2NXOc/edit?usp=sharing
+
+This is the link of the User Manual of GOOGLE FILE DRIVE STREAM APP :
+https://docs.google.com/document/d/1sUbfRNCGFxF4fujn3DwV1uATIC14jCVQzN6MICV82jc/edit?usp=sharing
