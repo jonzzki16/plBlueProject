@@ -13,7 +13,7 @@ It is useful for staffs and personnel of DBTC to use this tool to help them see 
 Watching the link below, is a short summary of our work in order for you to have a small background on checking what is our project all about.
 
 This is the Youtube Links of the Video Presentation made by the team for our #plBlueProject :
-https://youtu.be/TU9D1Q4gk9M
+https://youtu.be/3ogJ34Gpt6E
 
 Also this is the link for our DBTC Contact Book Poster :
 https://imgur.com/d98PmaQ
@@ -23,3 +23,6 @@ https://docs.google.com/document/d/1PO1QYWeTa1_EjDvYCuvgXa6cqtTWNNvQ32f0pQ2NXOc/
 
 This is the link of the User Manual of GOOGLE FILE DRIVE STREAM APP :
 https://docs.google.com/document/d/1sUbfRNCGFxF4fujn3DwV1uATIC14jCVQzN6MICV82jc/edit?usp=sharing
+
+This is the link of the User Manual of GOOGLE FILE DRIVE STREAM APP video tutorial:
+https://www.youtube.com/watch?v=Qaob-BkiWw0
